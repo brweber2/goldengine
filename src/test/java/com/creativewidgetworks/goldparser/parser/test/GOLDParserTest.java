@@ -1,17 +1,5 @@
 package com.creativewidgetworks.goldparser.parser.test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.io.StringReader;
-import java.util.List;
-
-import junit.framework.TestCase;
-
-import org.junit.Test;
-
 import com.creativewidgetworks.goldparser.engine.LRAction;
 import com.creativewidgetworks.goldparser.engine.LRState;
 import com.creativewidgetworks.goldparser.engine.LRStateList;
@@ -23,6 +11,16 @@ import com.creativewidgetworks.goldparser.engine.enums.SymbolType;
 import com.creativewidgetworks.goldparser.parser.GOLDParser;
 import com.creativewidgetworks.goldparser.parser.Scope;
 import com.creativewidgetworks.goldparser.parser.Variable;
+import junit.framework.TestCase;
+import org.junit.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.io.StringReader;
+import java.util.List;
 
 public class GOLDParserTest extends TestCase {
 
@@ -87,7 +85,7 @@ public class GOLDParserTest extends TestCase {
     public void testConstructor_missing_grammar_file() throws Exception {
         GOLDParser parser = new GOLDParser(new File("no_such_file"), "com.creativewidgetworks.goldparser.simple2", true);
         assertFalse(parser.isReady());
-        assertEquals("wrong msg", "GOLDParser(): no_such_file (The system cannot find the file specified)", parser.getErrorMessage());
+        assertEquals("wrong msg", "GOLDParser(): no_such_file (No such file or directory)", parser.getErrorMessage());
     }
 
     /*----------------------------------------------------------------------------*/

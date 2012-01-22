@@ -2,3 +2,6 @@
 /bin
 /dist
 /junit
+target
+*.iml
+.idea

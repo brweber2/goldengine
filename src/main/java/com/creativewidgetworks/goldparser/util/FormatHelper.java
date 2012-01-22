@@ -28,6 +28,7 @@ public class FormatHelper {
                 bundle = ResourceBundle.getBundle(bundleName);
             } catch (MissingResourceException mre) {
                 // Do nothing, we'll just use null
+                System.out.println("Unable to find bundle " + bundleName);
             }
         }
         

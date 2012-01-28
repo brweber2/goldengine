@@ -138,7 +138,7 @@ public class ResourceHelper {
     private static JarFile getJarFile(String filePath) throws IOException {
         if (filePath != null && filePath.contains(".jar!")) {
             filePath = filePath.replaceAll("%20", " ");
-            filePath = filePath.substring((filePath.indexOf("jar:file:/") + 10), filePath.indexOf('!'));
+            filePath = filePath.substring((filePath.indexOf("jar:file:/") + 9), filePath.indexOf('!'));
             JarFile jar = new JarFile(filePath);            
             Manifest mf = jar.getManifest();
             if (mf != null) {
